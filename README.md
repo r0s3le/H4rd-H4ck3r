@@ -1,7 +1,8 @@
 # H4rd-H4ck3r
 
 This is a collection of dotfiles for r0s3le's H4rd-H4ck3r rice.
-The config is still a work in progress, and will be added to after a few iterations. 
+The config is still a work in progress, and will be added to after a few iterations.
+This config is broken because of hardcoded filepaths (I know, bad r0s3le) will be fixed.
 
 ## Dependencies 
 
