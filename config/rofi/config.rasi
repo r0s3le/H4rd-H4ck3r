@@ -1,0 +1,76 @@
+/*
+   r0s3le's custom H4rdH4cker Rofi config
+   based on Rasmus Steinke's purple.rasi 
+
+   this config is for use with the purple.rasi
+   theme, located at:
+   /usr/share/rofi/themes/purple.rasi
+
+   if this theme is not installed the config
+   will break.
+*/
+configuration {
+  modes: [ combi ];
+  combi-modes: [ window, drun, run ];
+}
+
+@theme "/usr/share/rofi/themes/purple.rasi"
+
+/*
+    Transparency effects are layered on top of each other in rofi.
+    if editing, please check the documentation 
+    https://davatorium.github.io/rofi/guides/Transparency/theme3-transparency/
+*/
+window {
+    transparency: "real";
+    background: transparent;
+    background-color: #30253AF3;
+    border-color: #E965A5;
+    border-radius: 3px;
+}
+
+mainbox {
+    background: transparent;
+    background-color: #30253A05;
+}
+entry {
+    font: "cozette 12";
+    text-color: #b1f2a7;
+}
+
+prompt {
+    text-color: #E565A5;
+    font: "cozette 12";
+}
+textbox-prompt-colon { 
+    font: "cozette 12";
+    text-color: #B3F4F3;
+}
+
+message {
+    border-color: #E565A5;
+}
+
+element-text {
+font: "cozette 10";
+}
+
+element selected.normal {
+    background-color: #B1f2a7;
+    text-color: #E565A5;
+}
+
+element normal.normal {
+    background: transparent;
+    background-color:  #30253A00;
+    text-color: #B3F4F3;
+}
+
+element alternate.normal {  
+    background: transparent;
+    background-color:  #30253A00;
+    text-color: #B3F4F3;
+}
+
+
+

@@ -1,0 +1,142 @@
+{
+     "layer": "top",
+     "position": "top",
+     "margin-top": 5,
+     "margin-left": 5,
+     "margin-right": 5,
+     "margin-bottom": 5,
+    "height": 25,
+    "spacing": 0,
+    "modules-left": ["custom/launcher","sway/workspaces","cpu","memory"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["tray","clock","network","pulseaudio","battery","custom/powermenu"],
+
+"sway/window": {
+    "format": "【】 {}",
+    "rewrite": {
+        "(.*) - Mozilla Firefox": "🌎 $1",
+        "(.*) - fish": "> [$1]"
+    },
+    "separate-outputs": true
+    
+},
+
+"sway/workspaces": {
+	"active-only": false,
+	"all-outputs": true,
+	"format": "[{value}]",
+	"show-special": true,
+	"persistent-workspaces": {
+		"1": [],
+		"2": [],
+		"3": [],
+		"4": [],
+	},
+	"format-icons": {
+    		"1": "",
+    		"2": "",
+    		"3": "",
+    		"4": "",
+        "5": "",
+        "6": "",
+		"default": "",
+		"active": "󱓻󱓻󱓻󱓻󱓻󱓻",
+		"urgent": "󱓻",
+  },
+},
+    "memory": {
+    "interval": 3,
+    "format": " \u28B4 {}% ",
+    "max-length": 10
+    },
+    "cpu": {
+    "interval": 1,
+    "format": "《》{}%",
+    "max-length": 10
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "format-alt": " ◷ {:%a, %d %b %Y} ",
+	"format": " ◷⠀{:%H:%M} ",
+        "calendar": {
+                    "weeks-pos"     : "none",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#8fbcbb'><b>{}</b></span>",
+                              "days":       "<span color='#8a909e'>{}</span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#81a1c1'><b>{}</b></span>",
+                              "today":      "<span color='#88c0d0'><b>{}</b></span>"
+                              }
+                    },
+	},
+    "network": {
+        "format-ethernet": "謹",
+        "format-wifi": "直",
+        "format-disconnected": "睊",
+        "format-icons": ["󰤯 ","󰤟 ","󰤢 ","󰤥 ","󰤨 "],
+	"tooltip-format-wifi": "{essid}",
+	"tooltip-format-ethernet": "IP: {ipaddr}",
+  "tooltip-format-disconnected": "No Internet Connection",
+  "nospacing": 1,
+        "on-click": "/bin/alacritty -e nmtui"
+    },
+
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ⚡",
+        "format-plugged": "{capacity}% ⚠",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+
+    "bluetooth": {
+	      "format": "󰂯 {status}",
+	      "format-connected": "",
+	      "format-connected-battery": "",
+	      // "format-device-preference": [ "device1", "device2" ], // preference list deciding the displayed device
+	  "tooltip-format": "{controller_alias}\t{controller_address}\n\n{num_connections} connected",
+	  "tooltip-format-connected": "{num_connections} connected\n\n{device_enumerate}",
+	  "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+	  "tooltip-format-enumerate-connected-battery": "{device_alias}\t{device_battery_percentage}%"
+  },
+    "pulseaudio": {
+        "format": "{icon}",
+	"nospacing": 1,
+	"tooltip-format": "Volume : {volume}%",
+        "format-muted": "婢",
+        "format-icons": {
+            "default": ["奄","奔","墳"],
+        },
+  "on-click": "alacritty -e pulsemixer",
+	"on-click-right": "pavucontrol",
+	"scroll-step": 5,
+    },
+    "custom/launcher": {
+	"format": "  ",
+	"tooltip": false,
+	"on-click": "/bin/rofi -show drun",
+  "on-click-right": "/bin/firefox"
+    },
+    "custom/powermenu": {
+	"format": "⏻ ",
+	"tooltip": false,
+	"on-click": "swaylock"
+    },
+}
+
