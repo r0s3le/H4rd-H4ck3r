@@ -12,6 +12,7 @@ The config is still a work in progress, and will be added to after a few iterati
 * rofi
 * alacritty
 * grim
+* CozetteCrossedSeven https://github.com/the-moonwitch/Cozette
 
 ## Installation
 
