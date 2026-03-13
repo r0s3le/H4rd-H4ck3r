@@ -3,6 +3,10 @@
 This is a collection of dotfiles for r0s3le's H4rd-H4ck3r rice.
 The config is still a work in progress, and will be added to after a few iterations..
 
+## Showcase
+
+![SwayFX H4rdH4ck3r Rice](images/rice.png)
+
 ## Dependencies 
 
 * sway/swayfx
