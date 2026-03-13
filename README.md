@@ -9,7 +9,7 @@ The config is still a work in progress, and will be added to after a few iterati
 
 ## Dependencies 
 
-* sway/swayfx
+* swayfx/sway
 * swaylock
 * swayidle
 * waybar
@@ -22,8 +22,9 @@ The config is still a work in progress, and will be added to after a few iterati
 
 In the config/ portion of this project are the main files for this project. Installing them to your `~/.config` (Or whatever directory handles your configurations) directory **SHOULD** make most of the changes take effect after reloading the window manager, but for all changes to be properly applied a reboot may be needed.
 
-This setup assumes that the XDG_CONFIG_DIR environment variable is set to your config directory ie `~/.config`. This can be checked with `echo $XDG_CONFIG_DIR`.
-If your environment is not configured this way, and you'd like it to be, you can achievethis by adding this line to your $HOME/.bashrc file, `export XDG_CONFIG_HOME=$HOME/.config`.
+This setup assumes that the XDG_CONFIG_HOME environment variable is set to your config directory ie `~/.config`. This can be checked with `echo $XDG_CONFIG_HOME`.
+
+You are also free to dig into the files and hardcode things, as is the great ricing tradition.
 
 To install this environment and overwrite your current config run, 
 
