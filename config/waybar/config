@@ -1,3 +1,6 @@
+// I cannot remember where this config file is from. I did not write most of this.
+// It is so beautiful, if you know where this is from please let me know by making an issue
+
 {
      "layer": "top",
      "position": "top",
@@ -12,10 +15,11 @@
     "modules-right": ["tray","clock","network","pulseaudio","battery","custom/powermenu"],
 
 "sway/window": {
-    "format": "【】 {}",
+    "format": "{}",
     "rewrite": {
-        "(.*) - Mozilla Firefox": "🌎 $1",
-        "(.*) - fish": "> [$1]"
+        "(.*) - Mozilla Firefox": " $1",
+        "(.*) - fish": "  [$1]",
+	"(.*) - vim": " $1"
     },
     "separate-outputs": true
     

@@ -6,18 +6,10 @@
 
 ######################################################################
 #
-#       		r0s3le's TODO list
-#
-#  TODO: Make Directories in the config more portable to other systems 
-#
-#  TODO: Organize and leave some cutesy and intentional comments
+#       		 TODO list
+#  TODO: Put stuff here if you want
 #
 #  
-#
-#
-#
-#
-#
 
 
 
@@ -26,27 +18,30 @@
 # Logo key. Use Mod1 for Alt.
 set $mod Mod4
 
-# Home row direction keys, like vim
+# All hail  vim
 set $left h
 set $down j
 set $up k
 set $right l
 
-# Your preferred terminal emulator
+# Alacritty is best terminal
 set $term alacritty
 
-# Your preferred application launcher
+# Rofi has a better config than Wofi dont @ me
 set $menu rofi -show drun
 
 ### Output configuration
 #
-# Set wallpaper in /usr/share/backgrounds/sway/H4rdH4ck3r.jpg
-output * bg /home/captainrose/.config/Backgrounds/H4rdH4ck3r_BG.jpg fill
+# If this doesnt work for you, hardcode it, gamer
+# I cannot for the life of me get this to work with $XDG_CONFIG_HOME and I am giving up
+# You're welcome to try and make an issue
+output * bg "$HOME/.config/Backgrounds/H4rdH4ck3r_BG.jpg" fill
 
-# Client border settings
+# Delicious pixel
 default_border pixel 1
 
-# Colors: border background text indicator child_border
+# Colors: border background text indicator child_border (if you want color change use child border)
+# `man 5 sway` for documentation. its down in there :)
 client.focused          #e965a5 #282433 #eee9fc #b1f2a7 #e965af
 client.unfocused        #b1baf4 #282433 #eee9fc #3f3951 #b1baf4
 client.focused_inactive #e965a5 #282433 #eee9fc #b3f4f3 #b3f4f3
@@ -58,7 +53,7 @@ gaps inner 5
 # This is a swayfx configuration to give rounded corners (don't use without swayfx)
  corner_radius 3
 
-#font 
+# font config (you may have to mess with this low key) cozette is rough as a vector font
 font pango:cozettecrossedseven regular 12
 
 # Example configuration:
@@ -68,7 +63,7 @@ font pango:cozettecrossedseven regular 12
 # You can get the names of your outputs by running: swaymsg -t get_outputs
 
 ### Idle configuration
-#
+# plz lock ur screen
  exec swayidle -w \
           timeout 300 'swaylock -f -c 000000' \
           timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
@@ -79,19 +74,12 @@ font pango:cozettecrossedseven regular 12
 # resumed. It will also lock your screen before your computer goes to sleep.
 
 ### Input configuration
-#
-# Example configuration:
-#
    input type:touchpad {
        dwt enabled
        tap enabled
        natural_scroll enabled
        middle_emulation enabled
        }
-#
-#   input type:keyboard {
-#       xkb_layout "eu"
-#   }
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
 
@@ -119,7 +107,7 @@ font pango:cozettecrossedseven regular 12
     bindsym $mod+Shift+c reload
 
     # lock screen on lid close
-    bindswitch lid:on exec swaylock -i /home/captainrose/.config/Backgrounds/H4rdH4ck3r_LS.jpg && sleep 4
+    bindswitch lid:on exec swaylock && sleep 4
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
@@ -247,16 +235,13 @@ bindsym $mod+r mode "resize"
     bindsym --locked XF86MonBrightnessDown exec brightnessctl set 5%-
     bindsym --locked XF86MonBrightnessUp exec brightnessctl set 5%+
     # Special key to take a screenshot with grim
-    bindsym $mod+shift+s exec grim "/home/captainrose/Screenshots/tmp.png"
+    bindsym $mod+shift+s exec grim "$HOME/Screenshots/tmp.png"
 
-#
-# Status Bar:
-#
-# Read `man 5 sway-bar` for more information about this section.
+# waybar is super rad
 bar {
 #    position top
 	swaybar_command waybar
 	   
 }
 
-include /etc/sway/config.d/*
+#include /etc/sway/config.d/*

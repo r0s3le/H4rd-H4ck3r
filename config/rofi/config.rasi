@@ -1,5 +1,5 @@
 /*
-   r0s3le's custom H4rdH4cker Rofi config
+   r0s3le's H4rdH4cker Rofi config
    based on Rasmus Steinke's purple.rasi 
 
    this config is for use with the purple.rasi
@@ -8,6 +8,7 @@
 
    if this theme is not installed the config
    will break.
+   (will work on fixing that)
 */
 configuration {
   modes: [ combi ];
