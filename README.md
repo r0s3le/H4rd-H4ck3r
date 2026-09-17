@@ -12,12 +12,13 @@ The config is still a work in progress, and will be added to after a few iterati
 * swayfx/sway
 * swaylock
 * swayidle
+* swaync
 * waybar
 * rofi
 * alacritty
 * grim
 * pulsemixer
-* CozetteCrossedSeven https://github.com/the-moonwitch/Cozette
+* [CozetteCrossedSeven](https://github.com/the-moonwitch/Cozette)
 
 Note: without using xdg-desktop-portal* packages, you will not have a good experience.
 
