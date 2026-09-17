@@ -10,10 +10,8 @@
 #  TODO: Put stuff here if you want
 #
 #  
-
-### Set environment vars for the session
+#### Import important environment variables
 exec systemctl --user import-environment WAYLAND_DISPLAY XDG_CURRENT_DESKTOP XDG_SESSION_TYPE XDG_SESSION_DESKTOP
-
 
 ### Variables
 #
@@ -37,7 +35,11 @@ set $menu rofi -show drun
 # If this doesnt work for you, hardcode it, gamer
 # I cannot for the life of me get this to work with $XDG_CONFIG_HOME and I am giving up
 # You're welcome to try and make an issue
-output * bg "$HOME/.config/Backgrounds/H4rdH4ck3r_BG.jpg" fill
+output * bg "$HOME/.config/Backgrounds/r0s3le5kyl1n3.png" fill
+
+# Notification Daemon + control center
+exec swaync
+bindsym $mod+Shift+n exec swaync-client -t 
 
 # Delicious pixel
 default_border pixel 1
@@ -53,7 +55,7 @@ client.urgent           #ebde76 #282433 #282433 #ebde76 #e192ef
 gaps inner 5
 
 # This is a swayfx configuration to give rounded corners (don't use without swayfx)
- corner_radius 3
+ corner_radius 5
 
 # font config (you may have to mess with this low key) cozette is rough as a vector font
 font pango:cozettecrossedseven regular 12
@@ -81,6 +83,7 @@ font pango:cozettecrossedseven regular 12
        tap enabled
        natural_scroll enabled
        middle_emulation enabled
+       pointer_accel .42
        }
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
@@ -109,7 +112,7 @@ font pango:cozettecrossedseven regular 12
     bindsym $mod+Shift+c reload
 
     # lock screen on lid close
-    bindswitch lid:on exec swaylock && sleep 4
+    bindswitch lid:on exec swaylock && sleep 3
 
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
